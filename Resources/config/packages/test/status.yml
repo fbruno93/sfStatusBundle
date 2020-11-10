@@ -1,0 +1,4 @@
+status:
+  services:
+    - 'status.status.ko_status'
+    - 'status.status.doctrine_status'

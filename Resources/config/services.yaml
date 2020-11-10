@@ -1,0 +1,30 @@
+parameters:
+
+services:
+  _defaults:
+    bind:
+      $statusService: '@status.service.status_service'
+
+  StatusBundle\:
+    resource: '../*'
+    exclude: '../{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+  StatusBundle\Controller\:
+    resource: '../../Controller/'
+    tags: ['controller.service_arguments']
+
+  status.service.status_service:
+    class: StatusBundle\Service\StatusService
+    arguments:
+      $services: []
+
+  status.status.doctrine_status:
+    class: StatusBundle\Status\DoctrineStatus
+    arguments:
+      $entityManagerInterface: '@doctrine.orm.entity_manager'
+
+  status.status.ok_status:
+    class: StatusBundle\Status\OkStatus
+
+  status.status.ko_status:
+    class: StatusBundle\Status\KoStatus
