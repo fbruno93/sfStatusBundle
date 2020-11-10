@@ -23,7 +23,7 @@ $ composer config repositories.foo vcs https://github.com/fbruno93/sfStatusBundl
    $ composer require bfy/status-bundle
    ```
 
-### Step 2: Enable the Bundle
+### Step 3: Enable the Bundle
 
 Then, enable the bundle by adding it to the list of registered bundles
 in the `config/bundles.php` file of your project:
@@ -36,3 +36,7 @@ return [
     StatusBundle\StatusBundle::class => ['all' => true],
 ];
 ```
+
+### Step 4: Read the doc 
+
+it's this [way](Resources/doc/index.md)
